@@ -37,7 +37,7 @@ To write and execute Assembly Language Programs to perform arithmetic operations
 CODE SEGMENT
 ASSUME CS: CODE, DS: CODE
 ORG 1000H
-MOV SI,2000H
+MOV SI,1200H
 MOV CL,00H
 MOV AX,[SI]
 MOV BX,[SI+02H]
@@ -56,16 +56,18 @@ END
 #### Output Table
 
 | MEMORY LOCATION (INPUT) | MEMORY LOCATION (OUTPUT) |
-| ----------------------- | ------------------------ |
-|                         |                          |
+| ----1200 : 12---------- |   1204 : 24------------- |
+| ----1201 : 34---------- |   1205 : 68------------- |
+| ----1202 : 12---------- |   1206 : 00------------- |
+| ----1203 : 34---------- |   1207 : C4------------- |
 
 #### Manual Calculations
 
-(Add your calculation here)
+![nithish1(addi)](https://github.com/user-attachments/assets/38984e18-d129-44a3-89c0-f3fd1cbbb03b)
 
 ---
-
 ## OUTPUT IMAGE FROM MASM SOFTWARE
+<img width="640" height="480" alt="nithish1" src="https://github.com/user-attachments/assets/5c52a89f-f242-425b-94a3-26a5c88ad1f7" />
 
 ## 2. SUBTRACTION
 
@@ -84,22 +86,44 @@ END
 
 #### Program
 
-
+```asm
+CODE SEGMENT
+ASSUME CS: CODE, DS: CODE
+ORG 1000H
+MOV SI,1200H
+MOV CL,00H
+MOV AX,[SI]
+MOV BX,[SI+02H]
+SUB AX,BX
+JNC L1
+INC CL
+L1:
+MOV [SI+04H],AX
+MOV [SI+06H],CL
+MOV AH,4CH
+INT 21H
+CODE ENDS
+END
+```
 
 #### Output Table
 
 | MEMORY LOCATION (INPUT) | MEMORY LOCATION (OUTPUT) |
-| ----------------------- | ------------------------ |
-|                         |                          |
+| ----1200 : 12---------- |   1204 : 00------------- |
+| ----1201 : 34---------- |   1205 : 00------------- |
+| ----1202 : 12---------- |   1206 : 00------------- |
+| ----1203 : 34---------- |   1207 : C4------------- |
 
 #### Manual Calculations
 
-(Add your calculation here)
+![nithish2(subt)](https://github.com/user-attachments/assets/6ba10f6d-575b-4a07-8261-2d29943873d6)
 
 ---
 
 
 ## OUTPUT SCREEN FROM MASM SOFTWARE
+<img width="640" height="480" alt="nithish2" src="https://github.com/user-attachments/assets/862f58cb-c1bd-4af9-9666-2600cdc65c1b" />
+
 
 ## 3. MULTIPLICATION
 
@@ -122,7 +146,7 @@ END
 CODE SEGMENT
 ASSUME CS: CODE, DS: CODE
 ORG 1000H
-MOV SI,2000H
+MOV SI,1200H
 MOV DX,0000H
 MOV AX,[SI]
 MOV BX,[SI+02H]
@@ -138,16 +162,22 @@ END
 #### Output Table
 
 | MEMORY LOCATION (INPUT) | MEMORY LOCATION (OUTPUT) |
-| ----------------------- | ------------------------ |
-|                         |                          |
+| ----1200 : 12---------- |   1204 : 44------------- |
+| ----1201 : 34---------- |   1205 : 51------------- |
+| ----1202 : 12---------- |   1206 : 97------------- |
+| ----1203 : 34---------- |   1207 : 0A------------- |
 
 #### Manual Calculations
 
-(Add your calculation here)
+![nithish3(multi)](https://github.com/user-attachments/assets/09112770-5ea8-4c58-8b26-4cea78a8a128)
+
+
 
 ---
 
 ## OUTPUT SCREEN FROM MASM SOFTWARE
+<img width="640" height="480" alt="nithish3" src="https://github.com/user-attachments/assets/0753e49e-5b2a-4fb4-97e6-e8e17f3e50b7" />
+
 
 ## 4. DIVISION
 
@@ -167,7 +197,7 @@ END
 CODE SEGMENT
 ASSUME CS: CODE, DS: CODE
 ORG 1000H
-MOV SI,2000H
+MOV SI,1200H
 MOV DX,0000H
 MOV AX,[SI]
 MOV BX,[SI+02H]
@@ -183,17 +213,18 @@ END
 #### Output Table
 
 | MEMORY LOCATION (INPUT) | MEMORY LOCATION (OUTPUT) |
-| ----------------------- | ------------------------ |
-|                         |                          |
+| ----1200 : 12---------- |   1204 : 01------------- |
+| ----1201 : 34---------- |   1205 : 00------------- |
+| ----1202 : 12---------- |   1206 : 00------------- |
+| ----1203 : 34---------- |   1207 : 00------------- |
 
 #### Manual Calculations
 
-(Add your calculation here)
+![nithish4(divi)](https://github.com/user-attachments/assets/d759603a-dce0-4b13-ba54-994ee2fd587e)
 
 ---
 ## OUTPUT FROM MASM SOFTWARE
-
-
+<img width="640" height="480" alt="nithish4" src="https://github.com/user-attachments/assets/60de644e-42b5-4da8-8b4d-a84ac9b8720e" />
 
 ## RESULT
 
